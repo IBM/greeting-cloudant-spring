@@ -26,35 +26,46 @@ cloudant.db=databaseName
 
 Available endpoints:
 
-* GET `http://localhost:8080/demo/databases`
-```
-curl http://localhost:8080/demo/databases
-```
+* `http://localhost:8080/demo/databases`
+* `http://localhost:8080/demo/greeting`
+* `http://localhost:8080/demo/greeting/{id}`
 
-* GET or POST  `http://localhost:8080/demo/greeting`
-```
-curl http://localhost:8080/demo/greeting
-curl -H "Content-Type: application/json" -X POST -d '{"content":"Greetings from the README"}' http://localhost:8080/demo/greeting
-```
+Create a new greeting by supplying some content:
 
-* GET `http://localhost:8080/demo/greeting/{id}`
+`curl -H "Content-Type: application/json" -d '{"content":"test123"}' http://localhost:8080/demo/greeting`
 
-### To run with docker: 
+Ask for all known greetings:
 
-* `docker build -t cloudantsample .`
-* `docker run -it --rm -p 8080:8080 cloudantsample`
+`curl http://localhost:8080/demo/greeting`
+
+Ask for a particular greeting:
+
+`curl http://localhost:8080/demo/greeting/ID`
+
+Delete a greeting:
+
+`curl -X DELETE http://localhost:8080/demo/greeting/ID`
+
+### When run with docker: 
 
 Available endpoints:
 
-* GET `http://localhost:8080/databases`
-```
-curl http://localhost:8080/database
-```
+* `http://localhost:8080/databases`
+* `http://localhost:8080/greeting`
+* `http://localhost:8080/greeting/{id}`
 
-* GET or POST `http://localhost:8080/greeting`
-```
-curl http://localhost:8080/greeting
-curl -H "Content-Type: application/json" -X POST -d '{"content":"Greetings from the README"}' http://localhost:8080/greeting
-```
+Create a new greeting by supplying some content:
 
-* GET `http://localhost:8080/greeting/{id}`
+`curl -H "Content-Type: application/json" -d '{"content":"test123"}' http://localhost:8080/greeting`
+
+Ask for all known greetings:
+
+`curl http://localhost:8080/greeting`
+
+Ask for a particular greeting:
+
+`curl http://localhost:8080/greeting/ID`
+
+Delete a greeting:
+
+`curl -X DELETE http://localhost:8080/greeting/ID`
