@@ -18,14 +18,43 @@ cloudant.url=cloudantUrl
 cloudant.db=databaseName
 ~~~
 
-To build and run:
+### To build:
 
 * `mvn clean install`
+
+### When run with STS: 
+
+Available endpoints:
+
+* GET `http://localhost:8080/demo/databases`
+```
+curl http://localhost:8080/demo/databases
+```
+
+* GET or POST  `http://localhost:8080/demo/greeting`
+```
+curl http://localhost:8080/demo/greeting
+curl -H "Content-Type: application/json" -X POST -d '{"content":"Greetings from the README"}' http://localhost:8080/demo/greeting
+```
+
+* GET `http://localhost:8080/demo/greeting/{id}`
+
+### To run with docker: 
+
 * `docker build -t cloudantsample .`
 * `docker run -it --rm -p 8080:8080 cloudantsample`
 
 Available endpoints:
 
-* `http://localhost:8080/databases`
-* `http://localhost:8080/greeting`
-* `http://localhost:8080/greeting/{id}`
+* GET `http://localhost:8080/databases`
+```
+curl http://localhost:8080/database
+```
+
+* GET or POST `http://localhost:8080/greeting`
+```
+curl http://localhost:8080/greeting
+curl -H "Content-Type: application/json" -X POST -d '{"content":"Greetings from the README"}' http://localhost:8080/greeting
+```
+
+* GET `http://localhost:8080/greeting/{id}`
