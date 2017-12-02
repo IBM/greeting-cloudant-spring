@@ -26,5 +26,5 @@ import com.ibm.cloudant.spring.framework.EnableCloudant;
 @EnableCloudant
 @ComponentScan
 public class SpringConfig {
-    
+	
 }

@@ -26,12 +26,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CloudantController {
 
-    @Autowired
-    private CloudantClient client;
+	@Autowired
+	private CloudantClient client;
 
-    @RequestMapping("/databases")
-    public @ResponseBody List<String> data() {
-        List<String> allDbs = client.getAllDbs();
-        return allDbs;
-    }
+	@RequestMapping("/databases")
+	public @ResponseBody List<String> data() {
+		List<String> allDbs = client.getAllDbs();
+		return allDbs;
+	}
 }

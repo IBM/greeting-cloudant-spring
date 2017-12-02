@@ -36,33 +36,33 @@ import greeting.spring.boot.autoconfigure.model.Greeting;
 @RequestMapping("/greeting")
 public class GreetingController {
 
-    @Autowired
-    private Database db;
+	@Autowired
+	private Database db;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody List<Greeting> getAll() throws IOException {
-        List<Greeting> allDocs = db.getAllDocsRequestBuilder().includeDocs(true).build().getResponse().getDocsAs(Greeting.class);
-        return allDocs;
-    }
+	@RequestMapping(method = RequestMethod.GET)
+	public @ResponseBody List<Greeting> getAll() throws IOException {
+			List<Greeting> allDocs = db.getAllDocsRequestBuilder().includeDocs(true).build().getResponse().getDocsAs(Greeting.class);
+			return allDocs;
+	}
 
-    @RequestMapping(method = RequestMethod.GET, value="/{id}")
-    public @ResponseBody Greeting getGreeting(@PathVariable String id) throws IOException {
-        Greeting greeting = db.find(Greeting.class, id);
-        return greeting;
-    }
+	@RequestMapping(method = RequestMethod.GET, value="/{id}")
+	public @ResponseBody Greeting getGreeting(@PathVariable String id) throws IOException {
+			Greeting greeting = db.find(Greeting.class, id);
+			return greeting;
+	}
 
-    @RequestMapping(method = RequestMethod.POST, consumes = "application/json")
-    public @ResponseBody String add(@RequestBody Greeting greeting) {
-        Response response = db.post(greeting);
-        String id = response.getId();
-        return id;
-    }
-    
-    @RequestMapping(method=RequestMethod.DELETE, value="/{id}")
-    public ResponseEntity<?> deleteGreeting(@PathVariable String id) throws IOException {
-        Greeting greeting = db.find(Greeting.class, id);
-        Response remove = db.remove(greeting.get_id(),greeting.get_rev());
-        return new ResponseEntity<String>(remove.getReason(), HttpStatus.valueOf(remove.getStatusCode()));
-    }
-    
+	@RequestMapping(method = RequestMethod.POST, consumes = "application/json")
+	public @ResponseBody String add(@RequestBody Greeting greeting) {
+			Response response = db.post(greeting);
+			String id = response.getId();
+			return id;
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/{id}")
+	public ResponseEntity<?> deleteGreeting(@PathVariable String id) throws IOException {
+			Greeting greeting = db.find(Greeting.class, id);
+			Response remove = db.remove(greeting.get_id(),greeting.get_rev());
+			return new ResponseEntity<String>(remove.getReason(), HttpStatus.valueOf(remove.getStatusCode()));
+	}
+	
 }

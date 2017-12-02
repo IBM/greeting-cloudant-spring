@@ -26,21 +26,21 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties(CloudantConfigurationProperties.class)
 public class CloudantConfiguration {
-    @Autowired
-    private CloudantConfigurationProperties config;
+	@Autowired
+	private CloudantConfigurationProperties config;
 
-    @Bean
-    public CloudantClient client() {
-        ClientBuilder builder = ClientBuilder
-            .url(config.getUrl())
-            .username(config.getUsername())
-            .password(config.getPassword());
-        return builder.build();
-    }
+	@Bean
+	public CloudantClient client() {
+		ClientBuilder builder = ClientBuilder
+			.url(config.getUrl())
+			.username(config.getUsername())
+			.password(config.getPassword());
+		return builder.build();
+	}
 
-    @Bean
-    public Database database(CloudantClient client) {
-        Database db = client.database(config.getDb(), true);
-        return db;
-    }
+	@Bean
+	public Database database(CloudantClient client) {
+		Database db = client.database(config.getDb(), true);
+		return db;
+	}
 }
