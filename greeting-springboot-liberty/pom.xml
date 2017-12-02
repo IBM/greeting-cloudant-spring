@@ -67,6 +67,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.openliberty.boot</groupId>
+			<artifactId>liberty-spring-boot-starter</artifactId>
+			<version>0.5.0.M1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
