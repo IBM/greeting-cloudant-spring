@@ -24,6 +24,8 @@ import com.cloudant.client.api.Database;
 import com.cloudant.client.api.model.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -67,5 +69,12 @@ public class GreetingController {
         Response response = db.post(greeting);
         String id = response.getId();
         return id;
+    }
+
+    @RequestMapping(method=RequestMethod.DELETE, value="/{id}")
+    public ResponseEntity<?> deleteGreeting(@PathVariable String id) throws IOException {
+        Greeting greeting = db.find(Greeting.class, id);
+        Response remove = db.remove(greeting.get_id(),greeting.get_rev());
+        return new ResponseEntity<String>(remove.getReason(), HttpStatus.valueOf(remove.getStatusCode()));
     }
 }
