@@ -20,7 +20,7 @@ cloudant.db=databaseName
 To build and run:
 
 * `mvn clean install`
-* `java -jar tartet/demo-0.0.1-SNAPSHOT.jar`
+* `java -jar target/demo-0.0.1-SNAPSHOT.jar`
 
 Available endpoints:
 
