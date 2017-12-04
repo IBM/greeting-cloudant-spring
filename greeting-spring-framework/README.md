@@ -22,7 +22,7 @@ cloudant.db=databaseName
 
 * `mvn clean install`
 
-### When run with STS: 
+### When run as a war (e.g. Run On Server in Spring Tool Suite): 
 
 Available endpoints:
 
