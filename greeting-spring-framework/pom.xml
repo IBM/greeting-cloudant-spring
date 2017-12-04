@@ -12,25 +12,12 @@
 	<description>Demo using Cloudant and Spring Framework</description>
 
 	<properties>
-		<cloudant.version>0.0.1-SNAPSHOT</cloudant.version>
+		<cloudant.version>0.0.2</cloudant.version>
 		<spring.version>4.3.12.RELEASE</spring.version>
 		<junit.version>4.8.1</junit.version>
 		<java-version>1.7</java-version>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-	</repositories>
 	<dependencies>
 		<!-- Compile dependencies -->
 		<dependency>
