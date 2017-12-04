@@ -48,6 +48,11 @@ Delete a greeting:
 
 ### When run with docker: 
 
+Build docker image: 
+
+* `docker build -t cloudantsample .`
+* `docker run -it --rm -p 8080:8080 cloudantsample`
+
 Available endpoints:
 
 * `http://localhost:8080/databases`
