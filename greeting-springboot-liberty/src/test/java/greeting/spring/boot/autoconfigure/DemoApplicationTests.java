@@ -12,26 +12,18 @@
  * and limitations under the License.
  */
 
-package greeting.spring.boot.api;
+package greeting.spring.boot.autoconfigure;
 
-import java.util.List;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import com.cloudant.client.api.CloudantClient;
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class DemoApplicationTests {
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class CloudantController {
-
-	@Autowired
-	private CloudantClient client;
-
-	@RequestMapping("/databases")
-	public @ResponseBody List<String> data() {
-		List<String> allDbs = client.getAllDbs();
-		return allDbs;
+	@Test
+	public void contextLoads() {
 	}
 }

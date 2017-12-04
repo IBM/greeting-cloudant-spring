@@ -1,6 +1,6 @@
 # Spring Boot Greeting application with autoconfiguration
 
-This application shows how to connect to a Cloudant database using the new Spring Boot starter provided by the [Cloudant Spring Library](https://github.com/cloudant-labs/cloudant-spring). The library provides Spring capabilities on top of the official [Cloudant Java library](https://github.com/cloudant/java-cloudant).
+This application shows how to connect to a Cloudant database using the new Spring Boot starter provided by the [Cloudant Spring Library](https://github.com/cloudant-labs/cloudant-springofficial). The library provides Spring capabilities on top of the official [Cloudant Java library](https://github.com/cloudant/java-cloudant).
 
 ## Pre-requisites
 
@@ -20,7 +20,7 @@ cloudant.db=databaseName
 To build and run:
 
 * `mvn clean install`
-* `java -jar target/greeting-springboot-auto-0.0.1-SNAPSHOT.jar`
+* `java -jar target/greeting-springboot-liberty-0.0.1-SNAPSHOT.jar`
 
 Available endpoints:
 

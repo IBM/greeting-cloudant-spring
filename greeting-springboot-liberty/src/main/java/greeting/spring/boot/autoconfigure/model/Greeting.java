@@ -33,7 +33,6 @@ public class Greeting {
 	public String get_id() {
 		return _id;
 	}
-
 	public void set_id(String id) {
 		this._id = id;
 	}
@@ -41,7 +40,6 @@ public class Greeting {
 	public String get_rev() {
 		return _rev;
 	}
-
 	public void set_rev(String rev) {
 		this._rev = rev;
 	}

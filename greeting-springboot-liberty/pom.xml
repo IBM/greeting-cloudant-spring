@@ -4,12 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>greeting</groupId>
-	<artifactId>greeting-springboot</artifactId>
+	<artifactId>greeting-springboot-liberty</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Greetings</name>
-	<description>Demo using Cloudant and Spring Boot</description>
+	<description>Demo using OpenLiberty as an embedded runtime with
+		Cloudant and Spring Boot auto-configuration</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -24,20 +25,52 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<repositories>
+		<!-- Use snapshots for cloudant-spring-boot-starter  -->
+		<repository>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>liberty-spring-boot</id>
+			<url>https://public.dhe.ibm.com/ibmdl/export/pub/software/openliberty/runtime/spring-starter-alpha1</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<!-- BEGIN EXCLUDE TOMCAT -->
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+			<!-- END EXCLUDE TOMCAT -->
 		</dependency>
 		<dependency>
 			<groupId>com.cloudant</groupId>
-			<artifactId>cloudant-client</artifactId>
-			<version>2.11.0</version>
+			<artifactId>cloudant-spring-boot-starter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.openliberty.boot</groupId>
+			<artifactId>liberty-spring-boot-starter</artifactId>
+			<version>0.5.0.M1</version>
 		</dependency>
 	</dependencies>
 
