@@ -14,7 +14,9 @@ We have a few projects here:
 The following diagrams show the evolution of the Cloudant support for Spring applications and the added value provided by this new library.
 
 Overview of evolution:
-![alt text](/images/OverviewEvolution.png)
+
+![alt text](/images/OverviewEvolution.png "Overview of evolution")
 
 Detailed evolution:
-![alt text](/images/DetailedEvolution.png)
+
+![alt text](/images/DetailedEvolution.png "Detailed evolution")
