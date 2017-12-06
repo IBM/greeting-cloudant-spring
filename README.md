@@ -31,7 +31,7 @@ After:
 
 ### Detailed evolution:
 
-The new Cloudant Spring client provides both the beans used for connecting to Cloudant and the configuration properties files for specifying credential information. The library is pulled in as dependency from Maven Central.
+The new Cloudant Spring client provides both the beans used for connecting to Cloudant and the configuration properties file for specifying credential information. The library is pulled in as a dependency from Maven Central.
 
 ![alt text](/images/DetailedEvolution.png "Detailed evolution")
 
