@@ -10,3 +10,11 @@ We have a few projects here:
 2. [greeting-spring-framework](greeting-spring-framework/): This Spring Framework application uses the new `@EnableCloudant` annotation from the `com.cloudant:cloudant-spring-framework` library to connect to a Cloudant database
 3. [greeting-springboot-auto](greeting-springboot-auto/): This Spring Boot application uses the new `com.cloudant:cloudant-spring-boot-starter` library to automatically configure and connectto a Cloudant database
 4. [greeting-springboot-liberty](greeting-springboot-liberty/): This Spring Boot application uses the autoconfiguration support for Cloudant, but also uses [OpenLiberty](http://openliberty.io) in place of Tomcat.
+
+The following diagrams show the evolution of the Cloudant support for Spring applications and the added value provided by this new library.
+
+Overview of evolution:
+![alt text](/images/OverviewEvolution.png)
+
+Detailed evolution:
+![alt text](/images/DetailedEvolution.png)
