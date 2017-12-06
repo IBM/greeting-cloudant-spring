@@ -15,7 +15,7 @@ This repository contains a few projects to walk you through what this new suppor
 
 The official [Cloudant Java Client](https://github.com/cloudant/java-cloudant/) provides libraries for Java applications to connect to, and interact with Cloudant databases. The new [Cloudant Spring Library](https://github.com/cloudant-labs/cloudant-spring) builds on top of the Cloudant Java Client to enable autoconfiguration for Spring Boot applications and exposes an `@EnableCloudant` annotation for Spring Framework applications.
 
-### Overview of evolution:
+### Overview of evolution
 
 Before the creation of the Cloudant Spring Library developers had to include configuration for Spring beans that connected to Cloudant in their application code. Now the beans are provided by the library.
 
@@ -29,7 +29,7 @@ After:
 * Cloudant Spring library pulls in Cloudant Java client as a dependency
 * Spring configuration classes are pulled in as a dependency in Maven Central
 
-### Detailed evolution:
+### Detailed evolution
 
 The new Cloudant Spring client provides both the beans used for connecting to Cloudant and the configuration properties file for specifying credential information. The library is pulled in as a dependency from Maven Central.
 
