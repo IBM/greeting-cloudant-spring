@@ -1,6 +1,6 @@
 # Spring Framework Greeting application
 
-This application shows how to connect to a Cloudant database using the new `@EnableCloudant` annotation provided by the [Cloudant Spring Library](https://github.com/cloudant-labs/cloudant-springofficial). The library provides Spring capabilities on top of the official [Cloudant Java library](https://github.com/cloudant/java-cloudant).
+This application shows how to connect to a Cloudant database using the new `@EnableCloudant` annotation provided by the [Cloudant Spring Library](https://github.com/cloudant-labs/cloudant-spring). The library provides Spring capabilities on top of the official [Cloudant Java library](https://github.com/cloudant/java-cloudant).
 
 ## Pre-requisites
 
