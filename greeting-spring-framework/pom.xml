@@ -12,8 +12,8 @@
 	<description>Demo using Cloudant and Spring Framework</description>
 
 	<properties>
-		<cloudant.version>0.0.2</cloudant.version>
-		<spring.version>4.3.20.RELEASE</spring.version>
+		<cloudant.version>0.0.3</cloudant.version>
+		<spring.version>5.2.19.RELEASE</spring.version>
 		<junit.version>4.8.1</junit.version>
 		<java-version>1.7</java-version>
 	</properties>
